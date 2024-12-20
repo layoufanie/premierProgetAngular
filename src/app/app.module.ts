@@ -6,16 +6,19 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { RouterModule } from '@angular/router';
+import {Button} from "primeng/button";
 
 @NgModule({
   declarations: [
     FooterComponent,
-    AppComponent
+    AppComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    Button
   ],
   providers: [
     provideClientHydration()
