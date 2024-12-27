@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './about-us.component.css'
 })
 export class AboutUsComponent {
-
+  date: Date | undefined;
+  checked: boolean = false;
 }
