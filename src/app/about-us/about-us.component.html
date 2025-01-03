@@ -1,16 +1,27 @@
-
+<!--
 <p-button label="Submit" />
-<p-button 
-    label="Search" 
-    icon="pi pi-check" 
+<p-button
+    label="Search"
+    icon="pi pi-check"
  />
 <input type="text" pInputText />
- 
+
 <p-calendar [(ngModel)]="date" />
 <div class="card flex justify-content-center">
-    <p-checkbox 
+    <p-checkbox
         [(ngModel)]="checked" />
-</div>
+</div>-->
+
+<form [formGroup]="myFormAboutUs">
+  <div class="login">
+    <input type="text" formControlName="address"   pInputText placeholder="entrer votre adresse"/>
+    <input type="text" formControlName="phoneNumber"  pInputText placeholder="entrer votre prenom"/>
+    <input type="text" formControlName="city"  pInputText placeholder="entrer votre ville"/>
+    <p-button (onClick)="navigateToLogin()" label="retour" class="button" />
+  </div>
+
+</form>
+
 
 
 

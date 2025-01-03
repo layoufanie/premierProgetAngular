@@ -1,10 +1,12 @@
-
+<form [formGroup]="myFormLogin">
 <div class="login">
-    <input type="text" pInputText />
-    <p-password [toggleMask]="true" />
-    <p-button label="Enter" clas="button" />
+    <input type="text" formControlName="lastname"   pInputText placeholder="entrer votre nom"/>
+  <input type="text" formControlName="firstname"  pInputText placeholder="entrer votre prenom"/>
+  <input type="text" formControlName="email"  pInputText placeholder="entrer votre mail"/>
+    <p-password formControlName="password" [toggleMask]="true" />
+    <p-button (onClick)="navigate()" label="avancer" class="button" />
 </div>
 
-{{value}}
-<p-button onclick="updateValue()" label="Enter" clas="button" />
+</form>
+
 
