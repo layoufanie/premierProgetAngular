@@ -10,15 +10,28 @@ import {FormGroup} from "@angular/forms";
 })
 export class LoginComponent {
 myFormLogin: FormGroup;
+showErrorMessage = false;
 
   constructor(private service: LoginService, private route: Router) {
   this.myFormLogin = this.service.getLoginFormValue()
   }
 
+  userValue(event: Event){
+if(this.myFormLogin.value.firstname){
+  this.showErrorMessage = false;
+}
+  }
 
+  onBlur(){
+if(!this.myFormLogin.value.firstname){
+  this.showErrorMessage = true;
+}
+
+  }
   navigate(){
     this.service.setLoginValue(this.myFormLogin)
     this.route.navigate(['about-us']);
   }
 
+  protected readonly focus = focus;
 }
