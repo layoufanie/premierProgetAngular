@@ -11,6 +11,7 @@ import {FormGroup} from "@angular/forms";
 export class LoginComponent {
 myFormLogin: FormGroup;
 showErrorMessage = false;
+  secondErrorMessage = false;
 
   constructor(private service: LoginService, private route: Router) {
   this.myFormLogin = this.service.getLoginFormValue()
@@ -22,16 +23,27 @@ if(this.myFormLogin.value.firstname){
 }
   }
 
+  userValue2(event: Event){
+    if(this.myFormLogin.value.lastname){
+      this.secondErrorMessage = false;
+    }
+  }
+
   onBlur(){
 if(!this.myFormLogin.value.firstname){
   this.showErrorMessage = true;
 }
 
   }
+  inBlur() {
+    if (!this.myFormLogin.value.lastname) {
+      this.secondErrorMessage = true;
+    }
+  }
+
   navigate(){
     this.service.setLoginValue(this.myFormLogin)
     this.route.navigate(['about-us']);
   }
 
-  protected readonly focus = focus;
 }

@@ -1,6 +1,7 @@
 <form [formGroup]="myFormLogin">
 <div class="login">
-    <input type="text" formControlName="lastname"   pInputText placeholder="entrer votre nom"/>
+    <input type="text" formControlName="lastname" (input)="userValue2($event)" (blur)="inBlur()"   pInputText placeholder="entrer votre nom"/>
+  <p *ngIf="secondErrorMessage">Test</p>
   <input (input)="userValue($event)" (blur)="onBlur()" type="text" formControlName="firstname"  pInputText placeholder="entrer votre prenom"/>
   <p *ngIf="showErrorMessage">Ce champ est obligatoire. Veuillez le remplir!</p>
   <input type="text" formControlName="email"  pInputText placeholder="entrer votre mail"/>
